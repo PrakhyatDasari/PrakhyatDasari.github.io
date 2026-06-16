@@ -16,9 +16,10 @@
     header {
       background: #ffffff;
       border-bottom: 1px solid #e2e8f0;
-      padding: 24px 10%;
+      padding: 22px 10%;
       position: sticky;
       top: 0;
+      z-index: 10;
     }
 
     nav {
@@ -32,6 +33,10 @@
       color: #334155;
       text-decoration: none;
       font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #0369a1;
     }
 
     .hero {
@@ -50,6 +55,11 @@
       margin-bottom: 20px;
     }
 
+    .hero p {
+      max-width: 850px;
+      font-size: 18px;
+    }
+
     .btn {
       display: inline-block;
       margin-right: 12px;
@@ -62,14 +72,28 @@
       font-weight: bold;
     }
 
+    .btn.secondary {
+      background: #0f172a;
+    }
+
     section {
       padding: 60px 10%;
+    }
+
+    .alt {
+      background: #ffffff;
     }
 
     h3 {
       font-size: 30px;
       margin-bottom: 20px;
       color: #0f172a;
+    }
+
+    .section-intro {
+      max-width: 850px;
+      color: #475569;
+      margin-bottom: 28px;
     }
 
     .grid {
@@ -89,6 +113,39 @@
     .card h4 {
       margin-top: 0;
       color: #0369a1;
+      font-size: 19px;
+    }
+
+    .meta {
+      color: #64748b;
+      font-weight: 600;
+      margin-top: -8px;
+    }
+
+    .card ul {
+      padding-left: 20px;
+    }
+
+    .card li {
+      margin-bottom: 8px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .skill-box {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .skill-box h4 {
+      margin-top: 0;
+      color: #0369a1;
     }
 
     .tag {
@@ -101,11 +158,37 @@
       margin: 4px;
     }
 
+    a {
+      color: #0369a1;
+    }
+
     footer {
       text-align: center;
       padding: 30px;
       background: #0f172a;
       color: white;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav div {
+        margin-top: 12px;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 14px;
+        display: inline-block;
+        margin-bottom: 8px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
     }
   </style>
 </head>
@@ -119,6 +202,8 @@
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
+      <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -130,89 +215,209 @@
   <p>
     I analyze clinical, EHR, public health, and research datasets to support healthcare
     decision-making, reporting, quality improvement, and population health insights.
+    My work combines healthcare domain knowledge with Python, SQL, statistical modeling,
+    dashboards, and machine learning.
   </p>
   <a class="btn" href="resume.pdf">Download Resume</a>
-  <a class="btn" href="https://www.linkedin.com/in/prakhyat-dasari" target="_blank">LinkedIn</a>
-  <a class="btn" href="https://github.com/PrakhyatDasari" target="_blank">GitHub</a>
+  <a class="btn secondary" href="https://www.linkedin.com/in/prakhyat-dasari" target="_blank">LinkedIn</a>
+  <a class="btn secondary" href="#research">Research & Publications</a>
 </div>
 
 <section id="about">
   <h3>About Me</h3>
-  <p>
+  <p class="section-intro">
     I am a Health Informatics & Analytics graduate student at UNC Charlotte with experience
-    in clinical analytics, EHR data analysis, statistical modeling, machine learning, and
-    healthcare dashboard development. My work focuses on turning complex healthcare and
-    research data into clear, actionable insights.
+    in clinical analytics, EHR data analysis, statistical modeling, machine learning, public
+    health analytics, and healthcare dashboard development. My portfolio highlights projects
+    across clinical informatics, population health, research analytics, business intelligence,
+    and health economics.
   </p>
 </section>
 
-<section id="experience">
+<section id="experience" class="alt">
   <h3>Experience</h3>
   <div class="grid">
     <div class="card">
       <h4>Clinical Data Analyst Intern</h4>
-      <p><strong>Camino Research Institute</strong></p>
-      <p>Analyzed EHR and community health datasets to study dental care access, utilization patterns, demographics, and predictors of delayed routine visits.</p>
+      <p class="meta">Camino Research Institute · Charlotte, NC</p>
+      <ul>
+        <li>Analyzed EHR and community health datasets to study dental care access, utilization patterns, demographics, and predictors of delayed routine visits.</li>
+        <li>Used Epic SlicerDicer, Python, Excel, and statistical modeling to generate insights for community health program planning.</li>
+      </ul>
     </div>
 
     <div class="card">
       <h4>Graduate Research Assistant</h4>
-      <p><strong>UNC Charlotte</strong></p>
-      <p>Applied NLP, topic modeling, and text analytics to Reddit data to study loneliness, belonging, and social behavior patterns.</p>
+      <p class="meta">UNC Charlotte</p>
+      <ul>
+        <li>Applied NLP, topic modeling, and text analytics to Reddit data to study loneliness, belonging, and social behavior patterns.</li>
+        <li>Built research workflows using Python, R, sentiment analysis, and BERTopic-based topic modeling.</li>
+      </ul>
     </div>
 
     <div class="card">
       <h4>Graduate Teaching Assistant</h4>
-      <p><strong>UNC Charlotte</strong></p>
-      <p>Supported courses involving machine learning, business intelligence, social media analytics, Python, SQL, Tableau, and data visualization.</p>
+      <p class="meta">UNC Charlotte</p>
+      <ul>
+        <li>Supported courses involving machine learning, business intelligence, social media analytics, Python, SQL, Tableau, and data visualization.</li>
+        <li>Guided students on analytical projects involving regression, classification, text analytics, and dashboard development.</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <section id="projects">
-  <h3>Projects</h3>
+  <h3>Featured Projects</h3>
+  <p class="section-intro">
+    Selected analytics and research projects across healthcare, public health, business intelligence,
+    text analytics, and health economics.
+  </p>
+
   <div class="grid">
     <div class="card">
       <h4>Dental Care Access Analytics</h4>
-      <p>Analyzed community health survey data to identify factors associated with delayed dental visits among Latino populations.</p>
-      <p><strong>Tools:</strong> Python, Excel, Logistic Regression, Power BI</p>
+      <p class="meta">Camino Research Institute</p>
+      <ul>
+        <li>Analyzed community health survey data to identify factors associated with delayed dental visits among Latino populations.</li>
+        <li>Evaluated insurance status, income, education, employment, and years in the U.S. as predictors of delayed care.</li>
+        <li><strong>Tools:</strong> Python, pandas, Excel, Logistic Regression, Power BI</li>
+      </ul>
     </div>
 
     <div class="card">
-      <h4>EHR Utilization Analysis</h4>
-      <p>Explored Epic SlicerDicer data to evaluate patient demographics, visit patterns, service utilization, and care access gaps.</p>
-      <p><strong>Tools:</strong> Epic SlicerDicer, Excel, Healthcare Analytics</p>
+      <h4>Epic EHR Utilization Analysis</h4>
+      <p class="meta">Clinical Informatics Project</p>
+      <ul>
+        <li>Explored Epic SlicerDicer data to evaluate patient demographics, visit trends, service utilization, and access gaps.</li>
+        <li>Supported operational and quality improvement insights using EHR-based clinical analytics.</li>
+        <li><strong>Tools:</strong> Epic SlicerDicer, Excel, EHR Analytics</li>
+      </ul>
     </div>
 
     <div class="card">
-      <h4>Reddit Loneliness NLP Analysis</h4>
-      <p>Analyzed Reddit posts using NLP and topic modeling to study digital expressions of loneliness and belonging.</p>
-      <p><strong>Tools:</strong> Python, R, NLP, BERTopic</p>
+      <h4>CEO Leadership Signal Analysis</h4>
+      <p class="meta">Text Analytics & Regression</p>
+      <ul>
+        <li>Converted CEO shareholder letters into structured leadership signal features using text analytics.</li>
+        <li>Integrated communication features with 365 days of stock performance data to evaluate market outcome relationships.</li>
+        <li><strong>Tools:</strong> Python, Text Analytics, Regression, Finance Data</li>
+      </ul>
     </div>
 
     <div class="card">
-      <h4>Hospital OR Utilization Dashboard</h4>
-      <p>Created a Tableau dashboard for hospital operating room utilization benchmarking and executive decision support.</p>
-      <p><strong>Tools:</strong> Tableau, BI, Healthcare Analytics</p>
+      <h4>California Hospital OR Utilization Dashboard</h4>
+      <p class="meta">Business Intelligence Project</p>
+      <ul>
+        <li>Developed an interactive Tableau dashboard to analyze and benchmark California hospital operating room utilization.</li>
+        <li>Enabled dynamic metric selection, target setting, and executive-level decision support.</li>
+        <li><strong>Tools:</strong> Tableau, Healthcare Analytics, BI Dashboards</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h4>Predictive Modeling of Prenatal Care & Birth Outcomes</h4>
+      <p class="meta">Public Health Data Project</p>
+      <ul>
+        <li>Processed and analyzed 3.8M+ U.S. birth records from CDC NVSS and NBER datasets.</li>
+        <li>Built logistic and linear regression models to evaluate prenatal care utilization and preterm birth risk.</li>
+        <li><strong>Tools:</strong> SAS, Regression Modeling, Public Health Data</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h4>GLP-1 Diabetes Treatment Cost-Effectiveness Analysis</h4>
+      <p class="meta">Health Economics Project</p>
+      <ul>
+        <li>Developed a decision-analytic model comparing Tirzepatide and Semaglutide for Type 2 diabetes management.</li>
+        <li>Estimated ICER and QALY outcomes and conducted sensitivity analyses for payer decision support.</li>
+        <li><strong>Tools:</strong> Health Economics, Decision Analysis, Cost-Effectiveness Modeling</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="research" class="alt">
+  <h3>Research & Publications</h3>
+
+  <div class="grid">
+    <div class="card">
+      <h4>Loneliness in Social Media: NLP Research</h4>
+      <p class="meta">Graduate Research Assistant · UNC Charlotte</p>
+      <ul>
+        <li>Analyzed 50,000+ Reddit posts to study digital expressions of loneliness, belonging, and social connection.</li>
+        <li>Applied text preprocessing, sentiment analysis, topic modeling, and BERTopic to identify thematic patterns in online communities.</li>
+        <li><strong>Tools:</strong> Python, R, NLP, BERTopic, Sentiment Analysis</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h4>An In-Silico Approach for Identification of P20 Candidate Using Bioinformatics Tools</h4>
+      <p class="meta">Peer-Reviewed Publication · 2023</p>
+      <ul>
+        <li>Conducted bioinformatics analysis involving sequence alignment, phylogenetic tree construction, protein characterization, and peptide mass fingerprinting.</li>
+        <li>Applied computational biology tools to support candidate P20 protein identification.</li>
+        <li><a href="#" target="_blank">View Publication</a></li>
+      </ul>
     </div>
   </div>
 </section>
 
 <section id="skills">
-  <h3>Skills</h3>
-  <div>
-    <span class="tag">Python</span>
-    <span class="tag">SQL</span>
-    <span class="tag">R</span>
-    <span class="tag">SAS</span>
-    <span class="tag">Excel</span>
-    <span class="tag">Tableau</span>
-    <span class="tag">Power BI</span>
-    <span class="tag">Epic SlicerDicer</span>
-    <span class="tag">Machine Learning</span>
-    <span class="tag">NLP</span>
-    <span class="tag">Logistic Regression</span>
-    <span class="tag">Healthcare Analytics</span>
+  <h3>Technical Skills</h3>
+
+  <div class="skills-grid">
+    <div class="skill-box">
+      <h4>Programming & Databases</h4>
+      <span class="tag">Python</span>
+      <span class="tag">SQL</span>
+      <span class="tag">R</span>
+      <span class="tag">SAS</span>
+      <span class="tag">MongoDB</span>
+      <span class="tag">Neo4j</span>
+    </div>
+
+    <div class="skill-box">
+      <h4>Analytics & Statistics</h4>
+      <span class="tag">Logistic Regression</span>
+      <span class="tag">Predictive Modeling</span>
+      <span class="tag">Hypothesis Testing</span>
+      <span class="tag">Machine Learning</span>
+      <span class="tag">NLP</span>
+    </div>
+
+    <div class="skill-box">
+      <h4>Visualization & Reporting</h4>
+      <span class="tag">Power BI</span>
+      <span class="tag">Tableau</span>
+      <span class="tag">Excel</span>
+      <span class="tag">Business Intelligence</span>
+      <span class="tag">Dashboarding</span>
+    </div>
+
+    <div class="skill-box">
+      <h4>Healthcare Informatics</h4>
+      <span class="tag">Epic SlicerDicer</span>
+      <span class="tag">EHR Analytics</span>
+      <span class="tag">EMR Data</span>
+      <span class="tag">Population Health Analytics</span>
+      <span class="tag">Healthcare Quality Improvement</span>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="alt">
+  <h3>Education</h3>
+
+  <div class="grid">
+    <div class="card">
+      <h4>University of North Carolina at Charlotte</h4>
+      <p><strong>Master of Science in Health Informatics & Analytics</strong></p>
+    </div>
+
+    <div class="card">
+      <h4>KL University</h4>
+      <p><strong>Bachelor of Technology in Biotechnology</strong></p>
+    </div>
   </div>
 </section>
 
@@ -220,7 +425,6 @@
   <h3>Contact</h3>
   <p>Email: <a href="mailto:prakhyat000@gmail.com">prakhyat000@gmail.com</a></p>
   <p>LinkedIn: <a href="https://www.linkedin.com/in/prakhyat-dasari" target="_blank">linkedin.com/in/prakhyat-dasari</a></p>
-  <p>GitHub: <a href="https://github.com/PrakhyatDasari" target="_blank">github.com/PrakhyatDasari</a></p>
 </section>
 
 <footer>

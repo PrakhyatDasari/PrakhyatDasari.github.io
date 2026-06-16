@@ -12,34 +12,22 @@
       margin: 0;
       font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(56,189,248,0.22), transparent 32%),
-        radial-gradient(circle at top right, rgba(16,185,129,0.16), transparent 28%),
-        linear-gradient(135deg, #f8fafc 0%, #eef6ff 45%, #ffffff 100%);
+        radial-gradient(circle at top left, rgba(59,130,246,.20), transparent 28%),
+        radial-gradient(circle at top right, rgba(14,165,233,.18), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(16,185,129,.12), transparent 32%),
+        #f8fafc;
       color: #0f172a;
       line-height: 1.6;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.55) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.55) 1px, transparent 1px);
-      background-size: 42px 42px;
-      opacity: 0.22;
-      z-index: -1;
-    }
-
     header {
-      background: rgba(255,255,255,0.72);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(148,163,184,0.25);
-      padding: 16px 7%;
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 50;
+      padding: 16px 7%;
+      background: rgba(255,255,255,.72);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(148,163,184,.25);
     }
 
     nav {
@@ -49,15 +37,12 @@
       gap: 18px;
     }
 
-    nav strong {
-      font-size: 18px;
-      letter-spacing: -0.3px;
-    }
+    nav strong { font-size: 18px; }
 
     nav a {
       margin-left: 16px;
-      color: #334155;
       text-decoration: none;
+      color: #334155;
       font-weight: 700;
       font-size: 14px;
     }
@@ -65,35 +50,27 @@
     nav a:hover { color: #0284c7; }
 
     .hero {
-      min-height: 88vh;
-      display: flex;
+      min-height: 90vh;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 42px;
       align-items: center;
       padding: 90px 7%;
     }
 
-    .hero-wrap {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 42px;
-      align-items: center;
-      width: 100%;
-    }
-
     .eyebrow {
-      display: inline-block;
       color: #0369a1;
-      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.13em;
       font-size: 13px;
-      margin-bottom: 14px;
+      font-weight: 900;
+      letter-spacing: .14em;
     }
 
     h1 {
-      font-size: clamp(46px, 7vw, 78px);
-      line-height: 0.96;
-      margin: 0 0 18px;
+      font-size: clamp(46px, 7vw, 80px);
+      line-height: .95;
       letter-spacing: -3px;
+      margin: 14px 0;
     }
 
     .hero h2 {
@@ -103,9 +80,9 @@
     }
 
     .hero p {
-      max-width: 790px;
-      font-size: 18px;
+      max-width: 850px;
       color: #475569;
+      font-size: 18px;
     }
 
     .btn {
@@ -114,84 +91,75 @@
       padding: 12px 22px;
       border-radius: 999px;
       background: #0369a1;
-      color: #fff;
+      color: white;
       text-decoration: none;
       font-weight: 800;
-      box-shadow: 0 12px 28px rgba(3,105,161,0.18);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 14px 30px rgba(3,105,161,.18);
+      transition: .25s;
     }
 
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 36px rgba(3,105,161,0.24);
-    }
+    .btn:hover { transform: translateY(-3px); }
 
     .btn.dark { background: #0f172a; }
 
-    .hero-panel {
-      min-height: 430px;
-      border-radius: 34px;
-      padding: 24px;
-      background: rgba(255,255,255,0.58);
-      border: 1px solid rgba(255,255,255,0.75);
+    .profile-card {
+      background: rgba(255,255,255,.62);
+      border: 1px solid rgba(255,255,255,.8);
       backdrop-filter: blur(22px);
-      box-shadow: 0 30px 80px rgba(15,23,42,0.12);
+      border-radius: 36px;
+      padding: 24px;
+      box-shadow: 0 30px 80px rgba(15,23,42,.12);
       animation: float 5s ease-in-out infinite;
     }
 
-    .hero-panel img {
+    .profile-card img {
       width: 100%;
-      height: 260px;
+      height: 390px;
       object-fit: cover;
-      border-radius: 26px;
-      margin-bottom: 18px;
+      border-radius: 28px;
     }
 
-    .stat-grid {
+    .stats {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
+      margin-top: 16px;
     }
 
     .stat {
-      padding: 18px;
+      background: rgba(255,255,255,.68);
+      border: 1px solid rgba(226,232,240,.9);
       border-radius: 22px;
-      background: rgba(255,255,255,0.64);
-      border: 1px solid rgba(226,232,240,0.9);
+      padding: 16px;
     }
 
     .stat strong {
       display: block;
-      font-size: 25px;
       color: #0369a1;
+      font-size: 25px;
     }
 
     .stat span {
-      color: #475569;
       font-size: 13px;
-      font-weight: 700;
+      color: #475569;
+      font-weight: 800;
     }
 
-    section {
-      padding: 78px 7%;
-    }
+    section { padding: 78px 7%; }
 
-    .section-head {
-      margin-bottom: 34px;
-    }
+    .section-head { margin-bottom: 34px; }
 
     h3 {
       font-size: clamp(32px, 4vw, 46px);
+      letter-spacing: -1.4px;
       line-height: 1.05;
       margin: 0 0 12px;
-      letter-spacing: -1.4px;
     }
 
     .section-intro {
       max-width: 900px;
       color: #475569;
       font-size: 17px;
-      margin: 0;
     }
 
     .grid {
@@ -201,43 +169,36 @@
     }
 
     .glass {
-      background: rgba(255,255,255,0.62);
-      border: 1px solid rgba(255,255,255,0.78);
+      background: rgba(255,255,255,.64);
+      border: 1px solid rgba(255,255,255,.82);
       backdrop-filter: blur(18px);
-      border-radius: 26px;
-      box-shadow: 0 18px 44px rgba(15,23,42,0.08);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      border-radius: 28px;
+      box-shadow: 0 18px 44px rgba(15,23,42,.08);
+      overflow: hidden;
+      transition: .25s;
     }
 
     .glass:hover {
       transform: translateY(-6px);
-      box-shadow: 0 26px 60px rgba(15,23,42,0.13);
+      box-shadow: 0 26px 60px rgba(15,23,42,.13);
     }
 
-    .card {
-      padding: 26px;
-    }
-
-    .project-card {
-      overflow: hidden;
-    }
+    .card { padding: 26px; }
 
     .project-card img {
       width: 100%;
-      height: 190px;
+      height: 210px;
       object-fit: cover;
       display: block;
     }
 
-    .project-card .content {
-      padding: 24px;
-    }
+    .project-card .content { padding: 24px; }
 
     h4 {
-      margin: 0 0 8px;
       color: #0369a1;
       font-size: 20px;
       line-height: 1.25;
+      margin: 0 0 8px;
     }
 
     .meta {
@@ -262,12 +223,12 @@
 
     .tag {
       display: inline-block;
-      background: rgba(224,242,254,0.9);
+      background: rgba(224,242,254,.92);
       color: #075985;
       padding: 7px 11px;
       border-radius: 999px;
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 800;
       margin: 4px;
     }
 
@@ -288,8 +249,6 @@
       flex-wrap: wrap;
       margin-bottom: 8px;
     }
-
-    .experience-header h4 { margin: 0; }
 
     .date {
       color: #64748b;
@@ -312,11 +271,70 @@
       text-decoration: none;
     }
 
+    .contact {
+      background: #0b0f19;
+      color: white;
+      padding: 90px 7%;
+    }
+
+    .contact h3 {
+      font-size: clamp(46px, 8vw, 96px);
+      color: white;
+      max-width: 780px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 54px;
+      margin-top: 44px;
+    }
+
+    .contact-row {
+      border-top: 1px solid rgba(255,255,255,.25);
+      padding: 22px 0;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 20px;
+    }
+
+    .contact-row span {
+      color: #94a3b8;
+      font-size: 12px;
+      letter-spacing: .14em;
+    }
+
+    .contact-row a {
+      color: white;
+      text-decoration: none;
+    }
+
+    input, textarea {
+      width: 100%;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.16);
+      color: white;
+      padding: 16px;
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+
+    textarea { min-height: 140px; }
+
+    .send {
+      background: white;
+      color: #0b0f19;
+      padding: 14px 28px;
+      border: none;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
     footer {
       text-align: center;
       padding: 34px;
-      background: rgba(15,23,42,0.96);
-      color: white;
+      background: #0b0f19;
+      color: #94a3b8;
     }
 
     @keyframes float {
@@ -325,21 +343,9 @@
     }
 
     @media (max-width: 900px) {
-      .hero-wrap {
-        grid-template-columns: 1fr;
-      }
-
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav a {
-        margin-left: 0;
-        margin-right: 12px;
-        display: inline-block;
-        margin-bottom: 8px;
-      }
+      .hero, .contact-grid { grid-template-columns: 1fr; }
+      nav { flex-direction: column; align-items: flex-start; }
+      nav a { margin-left: 0; margin-right: 12px; display: inline-block; margin-bottom: 8px; }
     }
   </style>
 </head>
@@ -364,29 +370,26 @@
 <main>
 
 <section class="hero">
-  <div class="hero-wrap">
-    <div>
-      <span class="eyebrow">Healthcare Analytics • Clinical Informatics • Data Science</span>
-      <h1>Prakhyat Dasari</h1>
-      <h2>Healthcare Data Analyst | Health Informatics & Analytics</h2>
-      <p>
-        I analyze clinical, EHR, public health, financial, and research datasets to support healthcare decision-making,
-        reporting, quality improvement, and population health insights. My work combines healthcare domain knowledge
-        with Python, SQL, statistical modeling, dashboards, and machine learning.
-      </p>
-      <a class="btn" href="resume.pdf">Download Resume</a>
-      <a class="btn dark" href="https://www.linkedin.com/in/prakhyat-dasari" target="_blank">LinkedIn</a>
-      <a class="btn dark" href="#research">Publications</a>
-    </div>
+  <div>
+    <span class="eyebrow">Healthcare Analytics • Clinical Informatics • Data Science</span>
+    <h1>Prakhyat Dasari</h1>
+    <h2>Healthcare Data Analyst</h2>
+    <p>
+      I analyze clinical, EHR, public health, financial, and research datasets to support healthcare decision-making,
+      reporting, quality improvement, and population health insights.
+    </p>
+    <a class="btn" href="resume.pdf">Download Resume</a>
+    <a class="btn dark" href="https://www.linkedin.com/in/prakhyat-dasari" target="_blank">LinkedIn</a>
+    <a class="btn dark" href="#research">Publications</a>
+  </div>
 
-    <div class="hero-panel">
-      <img src="healthcare.jpg" alt="Healthcare analytics visual">
-      <div class="stat-grid">
-        <div class="stat"><strong>50K+</strong><span>Reddit posts analyzed</span></div>
-        <div class="stat"><strong>3.8M+</strong><span>Birth records modeled</span></div>
-        <div class="stat"><strong>Epic</strong><span>EHR utilization analysis</span></div>
-        <div class="stat"><strong>HIPAA</strong><span>Training completed</span></div>
-      </div>
+  <div class="profile-card">
+    <img src="Prakhyat%20Photo-2.jpeg" alt="Prakhyat Dasari">
+    <div class="stats">
+      <div class="stat"><strong>50K+</strong><span>Reddit Posts Analyzed</span></div>
+      <div class="stat"><strong>3.8M+</strong><span>Birth Records Modeled</span></div>
+      <div class="stat"><strong>5+</strong><span>Healthcare Analytics Projects</span></div>
+      <div class="stat"><strong>3+</strong><span>Years Professional Experience</span></div>
     </div>
   </div>
 </section>
@@ -395,90 +398,103 @@
   <div class="section-head">
     <h3>Featured Projects</h3>
     <p class="section-intro">
-      Analytics and research projects across clinical informatics, EHR analytics, public health, NLP,
-      business intelligence, health economics, and financial analytics.
+      Analytics projects across healthcare, EHR analytics, public health, sports analytics, NLP, BI, and health economics.
     </p>
   </div>
 
   <div class="grid">
+
     <div class="glass project-card">
-      <img src="healthcare.jpg" alt="Healthcare analytics project">
+      <img src="healthcare.jpg" alt="Healthcare analytics">
       <div class="content">
         <h4>Dental Care Access Analytics</h4>
         <p class="meta">Camino Research Institute</p>
         <ul>
-          <li>Analyzed statewide Latino community health survey data to identify factors associated with delayed dental visits.</li>
+          <li>Analyzed Latino community health survey data to identify factors associated with delayed dental visits.</li>
           <li>Evaluated insurance, income, education, employment, and years in the U.S. as predictors of delayed care.</li>
-          <li><strong>Tools:</strong> Python, pandas, Excel, Logistic Regression, Power BI</li>
+          <li><strong>Tools:</strong> Python, Excel, Logistic Regression, Power BI</li>
         </ul>
       </div>
     </div>
 
     <div class="glass project-card">
-      <img src="Epic.jpg" alt="Epic EHR analytics project">
+      <img src="Epic.jpg" alt="Epic EHR analytics">
       <div class="content">
         <h4>Epic EHR Utilization Analysis</h4>
         <p class="meta">Clinical Informatics Project</p>
         <ul>
           <li>Explored Epic SlicerDicer data to evaluate patient demographics, visit trends, service utilization, and access gaps.</li>
-          <li>Supported operational and quality improvement insights using EHR-based clinical analytics.</li>
+          <li>Supported operational and quality improvement insights using EHR-based analytics.</li>
           <li><strong>Tools:</strong> Epic SlicerDicer, Excel, EHR Analytics</li>
         </ul>
       </div>
     </div>
 
     <div class="glass project-card">
-      <img src="nlp.jpg" alt="NLP project">
+      <img src="nlp.jpg" alt="NLP analytics">
       <div class="content">
         <h4>Reddit Loneliness NLP Analysis</h4>
         <p class="meta">Graduate Research Project</p>
         <ul>
-          <li>Analyzed 50,000+ Reddit posts to examine digital expressions of loneliness, belonging, and social connection.</li>
+          <li>Analyzed 50,000+ Reddit posts to examine loneliness, belonging, and social connection.</li>
           <li>Applied NLP, sentiment analysis, and topic modeling to identify themes across online communities.</li>
-          <li><strong>Tools:</strong> Python, R, NLP, BERTopic, Sentiment Analysis</li>
+          <li><strong>Tools:</strong> Python, R, NLP, BERTopic</li>
         </ul>
       </div>
     </div>
 
-    <div class="glass card">
-      <h4>Predictive Modeling of Prenatal Care & Birth Outcomes</h4>
-      <p class="meta">Public Health Data Project</p>
-      <ul>
-        <li>Processed and analyzed 3.8M+ U.S. birth records from CDC NVSS and NBER datasets.</li>
-        <li>Built logistic and linear regression models to evaluate prenatal care utilization and preterm birth risk.</li>
-        <li><strong>Tools:</strong> SAS, Regression Modeling, Public Health Data</li>
-      </ul>
+    <div class="glass project-card">
+      <img src="Messi.jpg" alt="Messi sports analytics">
+      <div class="content">
+        <h4>Lionel Messi: The Modern Era’s Greatest Footballer</h4>
+        <p class="meta">Sports Analytics • Data Storytelling</p>
+        <ul>
+          <li>Built a data-backed analytical report evaluating Messi across goals, assists, trophies, awards, ratings, and consistency.</li>
+          <li>Created visualizations including bar charts, area charts, and scatterplots to communicate statistical dominance.</li>
+          <li><strong>Tools:</strong> Data Visualization, Statistical Analysis, Storytelling</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="glass card">
-      <h4>California Hospital Operating Room Utilization Dashboard</h4>
-      <p class="meta">Business Intelligence Project</p>
-      <ul>
-        <li>Developed an interactive Tableau dashboard to benchmark California hospital operating room utilization.</li>
-        <li>Enabled dynamic metric selection, target setting, and executive-level decision support.</li>
-        <li><strong>Tools:</strong> Tableau, Healthcare Analytics, BI Dashboards</li>
-      </ul>
+    <div class="glass project-card">
+      <img src="Prenatal%20Care.jpg" alt="Prenatal care analytics">
+      <div class="content">
+        <h4>Predictive Modeling of Prenatal Care & Birth Outcomes</h4>
+        <p class="meta">Public Health Data Project</p>
+        <ul>
+          <li>Processed and analyzed 3.8M+ U.S. birth records from CDC NVSS and NBER datasets.</li>
+          <li>Built regression models to evaluate prenatal care utilization and preterm birth risk.</li>
+          <li><strong>Tools:</strong> SAS, Regression Modeling, Public Health Data</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="glass card">
-      <h4>GLP-1 Diabetes Treatment Cost-Effectiveness Analysis</h4>
-      <p class="meta">Health Economics Project</p>
-      <ul>
-        <li>Developed a decision-analytic model comparing Tirzepatide and Semaglutide for Type 2 diabetes management.</li>
-        <li>Estimated ICER and QALY outcomes and conducted sensitivity analyses for payer decision support.</li>
-        <li><strong>Tools:</strong> Health Economics, Decision Analysis, Cost-Effectiveness Modeling</li>
-      </ul>
+    <div class="glass project-card">
+      <img src="cost_effectiveness.jpg" alt="Cost effectiveness analysis">
+      <div class="content">
+        <h4>GLP-1 Diabetes Treatment Cost-Effectiveness Analysis</h4>
+        <p class="meta">Health Economics Project</p>
+        <ul>
+          <li>Developed a decision-analytic model comparing Tirzepatide and Semaglutide for Type 2 diabetes.</li>
+          <li>Estimated ICER and QALY outcomes for payer decision support.</li>
+          <li><strong>Tools:</strong> Health Economics, Decision Analysis, Cost-Effectiveness Modeling</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="glass card">
-      <h4>CEO Leadership Signal Analysis</h4>
-      <p class="meta">Text Analytics & Regression</p>
-      <ul>
-        <li>Converted CEO shareholder letters into structured leadership signal features using text analytics.</li>
-        <li>Integrated communication features with 365 days of stock performance data to evaluate market outcome relationships.</li>
-        <li><strong>Tools:</strong> Python, Text Analytics, Regression, Finance Data</li>
-      </ul>
+    <div class="glass project-card">
+      <img src="Ceo%20Leadership.jpg" alt="CEO leadership analytics">
+      <div class="content">
+        <h4>CEO Leadership Signal Analysis</h4>
+        <p class="meta">Text Analytics & Regression</p>
+        <ul>
+          <li>Converted CEO shareholder letters into structured leadership signal features using text analytics.</li>
+          <li>Integrated communication features with stock performance data to evaluate market relationships.</li>
+          <li><strong>Tools:</strong> Python, Text Analytics, Regression, Finance Data</li>
+        </ul>
+      </div>
     </div>
+
   </div>
 </section>
 
@@ -492,8 +508,7 @@
       <h4>An In-Silico Approach for Identification of P20 Candidate Using Bioinformatics Tools</h4>
       <p class="meta">Peer-Reviewed Publication · 2023</p>
       <ul>
-        <li>Conducted bioinformatics analysis involving sequence alignment, phylogenetic tree construction, protein characterization, and MALDI-TOF peptide mass fingerprinting.</li>
-        <li>Applied computational biology tools to support candidate P20 protein identification.</li>
+        <li>Conducted sequence alignment, phylogenetic tree construction, protein characterization, and MALDI-TOF peptide mass fingerprinting.</li>
         <li><a href="https://doi.org/10.22377/ajp.v17i1.4714" target="_blank">View Publication</a></li>
       </ul>
     </div>
@@ -502,9 +517,8 @@
       <h4>Loneliness in Social Media: NLP Research</h4>
       <p class="meta">Graduate Research Assistant · UNC Charlotte</p>
       <ul>
-        <li>Analyzed 50,000+ Reddit posts using Python/R and machine learning techniques including NLP, sentiment analysis, and topic modeling.</li>
-        <li>Produced literature reviews, reports, and engineered workflows supporting interdisciplinary health informatics research.</li>
-        <li>Collaborated with faculty and graduate peers to translate computational findings into actionable health informatics insights.</li>
+        <li>Analyzed 50,000+ Reddit posts using Python/R, NLP, sentiment analysis, and topic modeling.</li>
+        <li>Produced literature reviews, reports, and research workflows supporting health informatics research.</li>
       </ul>
     </div>
   </div>
@@ -519,10 +533,7 @@
     <div class="glass card">
       <h4>HIPAA Training Certificate of Completion</h4>
       <p class="meta">Camino · Completed January 30, 2026</p>
-      <p>
-        Completed HIPAA training covering healthcare privacy, confidentiality, compliance,
-        and responsible handling of protected health information.
-      </p>
+      <p>Completed HIPAA training covering healthcare privacy, confidentiality, compliance, and protected health information handling.</p>
       <a class="certificate-link" href="Hippa%20Certification.pdf" target="_blank">View HIPAA Certificate</a>
     </div>
   </div>
@@ -541,7 +552,6 @@
       <span class="tag">Utilization Analysis</span>
       <span class="tag">Population Health Analytics</span>
       <span class="tag">Care Gap Analysis</span>
-      <span class="tag">Clinical Quality Reporting</span>
     </div>
 
     <div class="glass card">
@@ -551,20 +561,8 @@
       <span class="tag">SQL</span>
       <span class="tag">SAS</span>
       <span class="tag">Pandas</span>
-      <span class="tag">NumPy</span>
       <span class="tag">Logistic Regression</span>
       <span class="tag">Predictive Modeling</span>
-    </div>
-
-    <div class="glass card">
-      <h4>Data Analytics & Engineering</h4>
-      <span class="tag">Data Cleaning</span>
-      <span class="tag">Data Transformation</span>
-      <span class="tag">Data Validation</span>
-      <span class="tag">ETL Pipelines</span>
-      <span class="tag">Joins</span>
-      <span class="tag">CTEs</span>
-      <span class="tag">Window Functions</span>
     </div>
 
     <div class="glass card">
@@ -574,27 +572,15 @@
       <span class="tag">Excel</span>
       <span class="tag">Dashboard Development</span>
       <span class="tag">KPI Reporting</span>
-      <span class="tag">Data Storytelling</span>
     </div>
 
     <div class="glass card">
-      <h4>Financial & Business Analytics</h4>
-      <span class="tag">Cost Trend Analysis</span>
-      <span class="tag">Revenue Analysis</span>
-      <span class="tag">Variance Analysis</span>
-      <span class="tag">Forecasting Support</span>
-      <span class="tag">Operational Reporting</span>
-    </div>
-
-    <div class="glass card">
-      <h4>Databases, Platforms & Compliance</h4>
+      <h4>Platforms & Compliance</h4>
+      <span class="tag">Epic SlicerDicer</span>
       <span class="tag">SQL Server</span>
       <span class="tag">PostgreSQL</span>
       <span class="tag">MongoDB</span>
       <span class="tag">Neo4j</span>
-      <span class="tag">GitHub</span>
-      <span class="tag">Streamlit</span>
-      <span class="tag">Epic SlicerDicer</span>
       <span class="tag">HIPAA Compliance</span>
     </div>
   </div>
@@ -613,10 +599,9 @@
       </div>
       <p class="meta">Camino Research Institute · Charlotte, NC</p>
       <ul>
-        <li>Improved care access insights by analyzing EHR-based clinical and dental utilization data across patient demographics, visit trends, service utilization, and regional patterns using Epic SlicerDicer.</li>
-        <li>Conducted survey analyses on statewide Latino community health data to identify barriers and predictors of delayed routine dental care.</li>
-        <li>Prepared Power BI-ready datasets, KPI summaries, and statistical outputs supporting dashboard development and program planning.</li>
-        <li>Cleaned, validated, translated, and transformed Spanish-language survey records using Python, pandas, and Excel.</li>
+        <li>Analyzed EHR-based clinical and dental utilization data using Epic SlicerDicer.</li>
+        <li>Conducted survey analyses on statewide Latino community health data to identify delayed dental care predictors.</li>
+        <li>Prepared Power BI-ready datasets, KPI summaries, and statistical outputs.</li>
       </ul>
     </div>
 
@@ -628,8 +613,7 @@
       <p class="meta">UNC Charlotte · Prof. Lina Zhou</p>
       <ul>
         <li>Supported courses in business intelligence, machine learning, and social media analytics.</li>
-        <li>Guided students applying Python, SQL, and Tableau for real-world data analysis tasks.</li>
-        <li>Evaluated assignments involving regression modeling, classification, text analytics, and data visualization.</li>
+        <li>Guided students applying Python, SQL, Tableau, regression, classification, and text analytics.</li>
       </ul>
     </div>
 
@@ -640,9 +624,8 @@
       </div>
       <p class="meta">UNC Charlotte · Prof. George Shaw</p>
       <ul>
-        <li>Analyzed 50,000+ Reddit posts using Python/R and machine learning techniques including NLP, sentiment analysis, and topic modeling.</li>
-        <li>Produced literature reviews, reports, and engineered workflows for large-scale behavioral datasets.</li>
-        <li>Translated computational findings into actionable insights for health informatics research.</li>
+        <li>Analyzed 50,000+ Reddit posts using Python/R, NLP, sentiment analysis, and topic modeling.</li>
+        <li>Developed research workflows for large-scale behavioral datasets.</li>
       </ul>
     </div>
 
@@ -653,9 +636,8 @@
       </div>
       <p class="meta">Darwin Formulations Pvt. Ltd. · India</p>
       <ul>
-        <li>Analyzed operational, financial, and life sciences records to identify cost drivers, utilization trends, and performance gaps.</li>
-        <li>Built Excel reporting trackers for production output, inventory usage, testing outcomes, and budget variance.</li>
-        <li>Validated and standardized structured records across quality and R&D teams to improve traceability.</li>
+        <li>Analyzed operational, financial, and life sciences records to identify cost drivers and performance gaps.</li>
+        <li>Built Excel reporting trackers and supported budget variance analysis.</li>
       </ul>
     </div>
 
@@ -666,8 +648,8 @@
       </div>
       <p class="meta">Aster Ramesh Hospital · India</p>
       <ul>
-        <li>Maintained patient demographic, clinical, billing, and administrative records with attention to accuracy and confidentiality.</li>
-        <li>Reviewed records for missing, inconsistent, or duplicate information to support data quality workflows.</li>
+        <li>Maintained patient demographic, clinical, billing, and administrative records.</li>
+        <li>Reviewed records for missing, inconsistent, or duplicate information.</li>
       </ul>
     </div>
   </div>
@@ -682,25 +664,37 @@
     <div class="glass card">
       <h4>University of North Carolina at Charlotte</h4>
       <p><strong>Master of Science in Health Informatics & Analytics</strong></p>
-      <p class="meta">Charlotte, NC</p>
     </div>
 
     <div class="glass card">
       <h4>KL University</h4>
       <p><strong>Bachelor of Technology in Biotechnology</strong></p>
-      <p class="meta">India</p>
     </div>
   </div>
 </section>
 
-<section id="contact">
-  <div class="section-head">
-    <h3>Contact</h3>
-  </div>
+<section id="contact" class="contact">
+  <h3>LET'S BUILD BETTER HEALTHCARE WITH DATA →</h3>
 
-  <div class="glass card">
-    <p>Email: <a href="mailto:prakhyat316@gmail.com">prakhyat316@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/prakhyat-dasari" target="_blank">linkedin.com/in/prakhyat-dasari</a></p>
+  <div class="contact-grid">
+    <div>
+      <div class="contact-row">
+        <span>EMAIL</span>
+        <a href="mailto:prakhyat316@gmail.com">prakhyat316@gmail.com</a>
+      </div>
+
+      <div class="contact-row">
+        <span>LINKEDIN</span>
+        <a href="https://www.linkedin.com/in/prakhyat-dasari" target="_blank">in/prakhyat-dasari ↗</a>
+      </div>
+    </div>
+
+    <form action="mailto:prakhyat316@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your name">
+      <input type="email" name="email" placeholder="you@company.com">
+      <textarea name="message" placeholder="Tell me about the role, the problem, or the idea..."></textarea>
+      <button class="send" type="submit">Send message →</button>
+    </form>
   </div>
 </section>
 
